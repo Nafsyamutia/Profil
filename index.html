@@ -137,45 +137,6 @@
             font-weight: 600;
         }
 
-        /* --- Embed Video YouTube --- */
-        .youtube-section {
-            background: #fffbeb;
-            border: 1px solid #fef3c7;
-            border-radius: 20px;
-            padding: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.15);
-        }
-
-        .youtube-title {
-            font-size: 12px;
-            font-weight: 700;
-            color: #78350f;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* Rasio 16:9 */
-            height: 0;
-            overflow: hidden;
-            border-radius: 14px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
         /* --- Section Styling --- */
         .section {
             background: #ffffff;
@@ -218,17 +179,17 @@
             left: 4px;
         }
 
-        /* --- Skill Bars --- */
-        .skill-item { margin-bottom: 10px; }
+        /* --- Keahlian Bersih (Tanpa Bintang / Persentase) --- */
+        .skill-item {
+            margin-bottom: 12px;
+        }
         .skill-item:last-child { margin-bottom: 0; }
         
         .skill-info {
-            display: flex;
-            justify-content: space-between;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 600;
             color: #334155;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
         
         .skill-bar {
@@ -269,6 +230,45 @@
 
         .gallery-card:hover { transform: translateY(-3px); }
         .gallery-card:hover img { transform: scale(1.1); }
+
+        /* --- Embed Video YouTube --- */
+        .youtube-section {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 20px;
+            padding: 15px;
+            margin-bottom: 18px;
+            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.15);
+        }
+
+        .youtube-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: #78350f;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 14px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
 
         /* --- Social Links --- */
         .social-grid {
@@ -357,18 +357,10 @@
                 <img class="avatar-img" src="foto.jpg" alt="Foto Profil Nafsya Amelia">
             </div>
 
-            <span class="badge">MAHASISWA Sekolah Tinggi Multi Media "MMTC" YOGYAKARTA</span>
+            <span class="badge">MAHASISWA STMM "MMTC" YOGYAKARTA</span>
             <h1>Nafsya Amelia Sari Mutia</h1>
             <p class="nim">NIM: 025241461139</p>
             <p class="subtitle">S1 Manajemen Informasi Komunikasi</p>
-
-            <!-- Video YouTube Rahmatun Lil'Alameen -->
-            <div class="youtube-section">
-                <div class="youtube-title">🎵 Maher Zain - Rahmatun Lil'Alameen</div>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/Vqfy4ScRXFQ" title="Rahmatun Lil'Alameen" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
 
             <!-- BAGIAN 1: Pendidikan -->
             <div class="section">
@@ -376,7 +368,7 @@
                 <div class="list-item">SD Negeri Banjarjo</div>
                 <div class="list-item">SMP Negeri 3 Nusawungu</div>
                 <div class="list-item">SMK Negeri Nusawungu</div>
-                <div class="list-item"><strong>S1 Manajemen Informasi Komunikasi</div>
+                <div class="list-item"><strong>S1 Manajemen Informasi Komunikasi</strong></div>
             </div>
 
             <!-- BAGIAN 2: Pengalaman Organisasi -->
@@ -386,29 +378,29 @@
                 <div class="list-item"><strong>Anggota Humas - Korps Digita Marching Band STMM Yogyakarta</div>
             </div>
 
-            <!-- BAGIAN 3: Keahlian (Skills) -->
+            <!-- BAGIAN 3: Keahlian Utama (Tanpa Bintang & Persentase) -->
             <div class="section">
                 <div class="section-title">🚀 Keahlian Utama</div>
                 
                 <div class="skill-item">
-                    <div class="skill-info"><span>Analisis Data</span><span>90%</span></div>
+                    <div class="skill-info">Analisis Data</div>
                     <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
                 </div>
                 
                 <div class="skill-item">
-                    <div class="skill-info"><span>Public Speaking</span><span>88%</span></div>
+                    <div class="skill-info">Public Speaking</div>
                     <div class="skill-bar"><div class="skill-fill" style="width: 88%;"></div></div>
                 </div>
 
                 <div class="skill-item">
-                    <div class="skill-info"><span>Kerja Sama Tim</span><span>95%</span></div>
+                    <div class="skill-info">Kerja Sama Tim</div>
                     <div class="skill-bar"><div class="skill-fill" style="width: 95%;"></div></div>
                 </div>
             </div>
 
             <!-- BAGIAN 4: Galeri Foto -->
             <div class="section">
-                <div class="section-title">📸 Galeri Kegiatan</div>
+                <div class="section-title">📸 Galeri</div>
                 <div class="gallery-grid">
                     <div class="gallery-card"><img src="foto1.jpg" alt="Kegiatan 1"></div>
                     <div class="gallery-card"><img src="foto2.jpg" alt="Kegiatan 2"></div>
@@ -416,7 +408,15 @@
                 </div>
             </div>
 
-            <!-- BAGIAN 5: Tautan Media Sosial -->
+            <!-- BAGIAN 5: Video YouTube Rahmatun Lil'Alameen -->
+            <div class="youtube-section">
+                <div class="youtube-title">🎵 Maher Zain - Rahmatun Lil'Alameen</div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/Vqfy4ScRXFQ" title="Rahmatun Lil'Alameen" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- BAGIAN 6: Tautan Media Sosial -->
             <div class="social-grid">
                 <a href="https://github.com/Nafsyamutia" target="_blank" class="social-btn">💻 GitHub</a>
                 <a href="https://www.instagram.com/nafliasmut?vrfl=cnJ6Z2hsa292dmwy" target="_blank" class="social-btn">📸 Instagram</a>
