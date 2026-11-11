@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Mahasiswa</title>
+    <title>Profil Mahasiswa - Nafsya Amelia</title>
     <style>
         * {
             margin: 0;
@@ -13,20 +13,20 @@
         }
 
         body {
-            background: linear-gradient(135deg, #fce7f3 0%, #fef3c7 50%, #e0f2fe 100%);
+            background: linear-gradient(135deg, #fce7f3 0%, #fef3c7 40%, #e0f2fe 100%);
             color: #334155;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 30px 20px;
             overflow-x: hidden;
             position: relative;
         }
 
-        /* --- Animasi Bintang Berjatuhan --- */
+        /* --- Animasi Latar Belakang Bintang --- */
         .stars-container {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -39,8 +39,6 @@
         .star {
             position: absolute;
             top: -20px;
-            color: #ec4899;
-            font-size: 14px;
             opacity: 0.7;
             animation: fall linear infinite;
         }
@@ -48,7 +46,7 @@
         @keyframes fall {
             0% {
                 transform: translateY(-20px) rotate(0deg);
-                opacity: 0.8;
+                opacity: 0.9;
             }
             100% {
                 transform: translateY(105vh) rotate(360deg);
@@ -56,76 +54,79 @@
             }
         }
 
-        /* Variasi posisi dan durasi bintang jatuh */
-        .star:nth-child(1) { left: 10%; animation-duration: 6s; animation-delay: 0s; color: #f472b6; font-size: 18px; }
-        .star:nth-child(2) { left: 25%; animation-duration: 8s; animation-delay: 2s; color: #38bdf8; font-size: 14px; }
-        .star:nth-child(3) { left: 40%; animation-duration: 5s; animation-delay: 1s; color: #fbbf24; font-size: 20px; }
-        .star:nth-child(4) { left: 55%; animation-duration: 7s; animation-delay: 3s; color: #f472b6; font-size: 12px; }
-        .star:nth-child(5) { left: 70%; animation-duration: 9s; animation-delay: 0.5s; color: #38bdf8; font-size: 16px; }
-        .star:nth-child(6) { left: 85%; animation-duration: 6.5s; animation-delay: 2.5s; color: #fbbf24; font-size: 22px; }
-        .star:nth-child(7) { left: 95%; animation-duration: 7.5s; animation-delay: 1.5s; color: #f472b6; font-size: 15px; }
+        .star:nth-child(1) { left: 8%; animation-duration: 6s; color: #f472b6; font-size: 18px; }
+        .star:nth-child(2) { left: 22%; animation-duration: 8s; animation-delay: 1.5s; color: #38bdf8; font-size: 14px; }
+        .star:nth-child(3) { left: 38%; animation-duration: 5s; animation-delay: 0.5s; color: #fbbf24; font-size: 22px; }
+        .star:nth-child(4) { left: 54%; animation-duration: 7s; animation-delay: 2.5s; color: #ec4899; font-size: 16px; }
+        .star:nth-child(5) { left: 72%; animation-duration: 9s; animation-delay: 1s; color: #0284c7; font-size: 20px; }
+        .star:nth-child(6) { left: 88%; animation-duration: 6.5s; animation-delay: 3s; color: #fbbf24; font-size: 15px; }
 
         /* --- Kartu Utama --- */
         .card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(16px);
             border: 2px solid #ffffff;
-            border-radius: 24px;
-            padding: 35px 40px;
-            max-width: 460px;
+            border-radius: 30px;
+            max-width: 480px;
             width: 100%;
-            text-align: center;
-            box-shadow: 0 15px 35px rgba(244, 114, 182, 0.15);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(244, 114, 182, 0.2);
             z-index: 2;
             position: relative;
         }
 
-        /* --- Karakter Animasi --- */
+        /* --- Banner Atas --- */
+        .banner {
+            height: 110px;
+            background: linear-gradient(90deg, #f472b6 0%, #a855f7 50%, #38bdf8 100%);
+            position: relative;
+        }
+
+        /* --- Foto Profil Utama --- */
         .avatar-box {
             position: relative;
-            width: 110px;
-            height: 110px;
-            margin: 0 auto 15px auto;
+            width: 120px;
+            height: 120px;
+            margin: -60px auto 12px auto;
         }
 
         .avatar-img {
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            border: 4px solid #ffffff;
-            box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
-            background: #fbcfe8;
+            border: 5px solid #ffffff;
+            box-shadow: 0 10px 25px rgba(236, 72, 153, 0.25);
             object-fit: cover;
-            animation: float 3s ease-in-out infinite;
+            animation: bounce 3s ease-in-out infinite;
         }
 
-        /* Animasi Melayang (Floating) Karakter */
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-8px);
-            }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        .card-body {
+            padding: 0 30px 35px 30px;
+            text-align: center;
         }
 
         .badge {
             background: #fbcfe8;
             border: 1px solid #f472b6;
             color: #be185d;
-            padding: 6px 18px;
+            padding: 5px 16px;
             border-radius: 20px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
             display: inline-block;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         h1 {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 800;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             background: linear-gradient(to right, #ec4899, #0284c7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -134,7 +135,7 @@
         .subtitle {
             color: #64748b;
             font-size: 14px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             font-weight: 500;
         }
 
@@ -143,7 +144,7 @@
             flex-wrap: wrap;
             gap: 8px;
             justify-content: center;
-            margin-bottom: 24px;
+            margin-bottom: 22px;
         }
 
         .tag {
@@ -156,54 +157,125 @@
             font-weight: 600;
         }
 
-        .stats {
+        /* --- Player Musik Dekoratif --- */
+        .music-card {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 18px;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.12);
+        }
+
+        .vinyl {
+            width: 36px;
+            height: 36px;
+            background: #1e293b;
+            border-radius: 50%;
+            border: 3px solid #ec4899;
+            animation: spin 4s linear infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .vinyl::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        .music-info {
+            text-align: left;
+            flex-grow: 1;
+        }
+
+        .music-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: #78350f;
+        }
+
+        .music-artist {
+            font-size: 11px;
+            color: #94a3b8;
+        }
+
+        /* --- Galeri Foto --- */
+        .section-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #ec4899;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 10px;
             margin-bottom: 24px;
         }
 
-        .stat-box {
-            background: #fffbeb;
-            border: 1px solid #fef3c7;
-            padding: 12px 6px;
+        .gallery-card {
+            position: relative;
             border-radius: 16px;
+            overflow: hidden;
+            height: 100px;
+            border: 2px solid #ffffff;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .stat-number {
-            font-size: 18px;
-            font-weight: bold;
-            color: #ec4899;
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
         }
 
-        .stat-label {
-            font-size: 11px;
-            color: #78350f;
-            margin-top: 4px;
-            font-weight: 500;
+        .gallery-card:hover {
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 12px 20px rgba(56, 189, 248, 0.3);
         }
 
+        .gallery-card:hover img {
+            transform: scale(1.12);
+        }
+
+        /* --- Tombol Kontak --- */
         .btn {
             background: linear-gradient(90deg, #f472b6 0%, #38bdf8 100%);
             color: white;
             text-decoration: none;
-            padding: 12px 24px;
-            border-radius: 14px;
-            font-weight: 600;
+            padding: 13px 24px;
+            border-radius: 16px;
+            font-weight: 700;
             font-size: 14px;
             display: block;
-            margin-bottom: 12px;
-            box-shadow: 0 8px 18px rgba(56, 189, 248, 0.3);
-            transition: transform 0.2s ease;
+            box-shadow: 0 8px 20px rgba(56, 189, 248, 0.35);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .btn:hover {
             transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(244, 114, 182, 0.45);
         }
 
-        .email {
-            font-size: 12px;
+        .footer-text {
+            font-size: 11px;
             color: #94a3b8;
+            margin-top: 14px;
         }
     </style>
 </head>
@@ -217,43 +289,55 @@
         <div class="star">✦</div>
         <div class="star">★</div>
         <div class="star">✦</div>
-        <div class="star">★</div>
     </div>
 
-    <!-- Kartu Profil -->
+    <!-- Kartu Utama -->
     <div class="card">
-        <!-- Karakter Animasi Melayang -->
-        <div class="avatar-box">
-            <img class="avatar-img" src="https://api.dicebear.com/7.x/bottts/svg?seed=Nafsya" alt="Karakter Animasi">
-        </div>
-
-        <span class="badge">MAHASISWA</span>
-        <h1>Nafsya Amelia</h1>
-        <p class="subtitle">Manajemen Informasi Komunikasi</p>
-
-        <div class="tags">
-            <span class="tag">☁️ Cloud Computing</span>
-            <span class="tag">🌐 Web</span>
-            <span class="tag">📊 Data</span>
-        </div>
-
-        <div class="stats">
-            <div class="stat-box">
-                <div class="stat-number">100+</div>
-                <div class="stat-label">Proyek</div>
+        <div class="banner"></div>
+        
+        <div class="card-body">
+            <!-- Foto Utama (foto.jpg) -->
+            <div class="avatar-box">
+                <img class="avatar-img" src="foto.jpg" alt="Foto Profil Nafsya">
             </div>
-            <div class="stat-box">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Semangat</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">STMM</div>
-                <div class="stat-label">Kampus</div>
-            </div>
-        </div>
 
-        <a href="mailto:mahasiswa@email.com" class="btn">Hubungi Saya</a>
-        <p class="email">mahasiswa@email.com</p>
+            <span class="badge">MAHASISWA</span>
+            <h1>Nafsya Amelia</h1>
+            <p class="subtitle">Manajemen Informasi Komunikasi</p>
+
+            <div class="tags">
+                <span class="tag">☁️ Cloud Computing</span>
+                <span class="tag">🌐 Web</span>
+                <span class="tag">📊 Data</span>
+            </div>
+
+            <!-- Pemutar Musik Estetik -->
+            <div class="music-card">
+                <div class="vinyl"></div>
+                <div class="music-info">
+                    <div class="music-title">Favorite Vibe ✨</div>
+                    <div class="music-artist">Nafsya's Playlist • Chill & Coding</div>
+                </div>
+            </div>
+
+            <!-- Galeri Foto (foto1.jpg, foto2.jpg, foto3.jpg) -->
+            <div class="section-title">📸 Galeri Kegiatan</div>
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <img src="foto1.jpg" alt="Kegiatan 1">
+                </div>
+                <div class="gallery-card">
+                    <img src="foto2.jpg" alt="Kegiatan 2">
+                </div>
+                <div class="gallery-card">
+                    <img src="foto3.jpg" alt="Kegiatan 3">
+                </div>
+            </div>
+
+            <!-- Tombol Aksi -->
+            <a href="mailto:mahasiswa@email.com" class="btn">Hubungi Saya ✉️</a>
+            <p class="footer-text">Sekolah Tinggi Multi Media Yogyakarta</p>
+        </div>
     </div>
 
 </body>
