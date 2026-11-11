@@ -137,6 +137,72 @@
             font-weight: 600;
         }
 
+        /* --- Player Musik Interaktif --- */
+        .music-card {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-radius: 18px;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .music-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 16px rgba(251, 191, 36, 0.2);
+        }
+
+        .vinyl {
+            width: 42px;
+            height: 42px;
+            background: #1e293b;
+            border-radius: 50%;
+            border: 3px solid #ec4899;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .vinyl::after {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        /* Animasi berputar saat lagu dimainkan */
+        .playing .vinyl {
+            animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        .music-info { text-align: left; flex-grow: 1; }
+        .music-title { font-size: 13px; font-weight: 700; color: #78350f; }
+        .music-artist { font-size: 11px; color: #94a3b8; margin-top: 2px; }
+
+        .play-btn {
+            background: #ec4899;
+            color: white;
+            border: none;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(236, 72, 153, 0.3);
+        }
+
         /* --- Section Styling --- */
         .section {
             background: #ffffff;
@@ -180,9 +246,7 @@
         }
 
         /* --- Skill Bars --- */
-        .skill-item {
-            margin-bottom: 10px;
-        }
+        .skill-item { margin-bottom: 10px; }
         .skill-item:last-child { margin-bottom: 0; }
         
         .skill-info {
@@ -206,44 +270,6 @@
             border-radius: 10px;
             background: linear-gradient(90deg, #f472b6, #38bdf8);
         }
-
-        /* --- Player Musik --- */
-        .music-card {
-            background: #fffbeb;
-            border: 1px solid #fef3c7;
-            border-radius: 18px;
-            padding: 10px 16px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-
-        .vinyl {
-            width: 36px;
-            height: 36px;
-            background: #1e293b;
-            border-radius: 50%;
-            border: 3px solid #ec4899;
-            animation: spin 4s linear infinite;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .vinyl::after {
-            content: '';
-            width: 10px;
-            height: 10px;
-            background: #ffffff;
-            border-radius: 50%;
-        }
-
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-
-        .music-info { text-align: left; flex-grow: 1; }
-        .music-title { font-size: 12px; font-weight: 700; color: #78350f; }
-        .music-artist { font-size: 11px; color: #94a3b8; }
 
         /* --- Galeri Grid --- */
         .gallery-grid {
@@ -348,6 +374,9 @@
         <div class="star">✦</div>
     </div>
 
+    <!-- Audio Element Musik (Rahmatun Lil'Alameen) -->
+    <audio id="myAudio" src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=rahmatun-lil-alameen-instrumental-113333.mp3"></audio>
+
     <!-- Kartu Utama -->
     <div class="card">
         <div class="banner"></div>
@@ -363,13 +392,14 @@
             <p class="nim">NIM: 025241461139</p>
             <p class="subtitle">S1 Manajemen Informasi Komunikasi</p>
 
-            <!-- Player Musik -->
-            <div class="music-card">
+            <!-- Pemutar Musik Interaktif -->
+            <div class="music-card" id="musicCard" onclick="toggleAudio()">
                 <div class="vinyl"></div>
                 <div class="music-info">
-                    <div class="music-title">Favorite Vibe ✨</div>
-                    <div class="music-artist">Nafsya's Playlist • MMTC Yogyakarta</div>
+                    <div class="music-title">Rahmatun Lil'Alameen ✨</div>
+                    <div class="music-artist">Maher Zain • Favorite Song (Klik untuk Putar)</div>
                 </div>
+                <button class="play-btn" id="playBtn">▶</button>
             </div>
 
             <!-- BAGIAN 1: Pendidikan -->
@@ -384,7 +414,7 @@
             <!-- BAGIAN 2: Pengalaman Organisasi -->
             <div class="section">
                 <div class="section-title">🏛️ Pengalaman Organisasi</div>
-                <div class="list-item"><strong>Sekretaris Kabinet</strong> - Badan Eksekutif Mahasiswa (BEM) STMM Yogyakarta</div>
+                <div class="list-item"><strong>Sekretaris Kabinet</strong> - Badan Eksekutif Mahasiswa STMM YK</div>
                 <div class="list-item"><strong>Anggota Humas</strong> - Korps Digita Marching Band STMM Yogyakarta</div>
             </div>
 
@@ -410,7 +440,7 @@
 
             <!-- BAGIAN 4: Galeri Foto -->
             <div class="section">
-                <div class="section-title">📸 Galeri Kegiatan</div>
+                <div class="section-title">📸 Galeri</div>
                 <div class="gallery-grid">
                     <div class="gallery-card"><img src="foto1.jpg" alt="Kegiatan 1"></div>
                     <div class="gallery-card"><img src="foto2.jpg" alt="Kegiatan 2"></div>
@@ -434,5 +464,23 @@
         </div>
     </div>
 
+    <!-- JavaScript untuk Pemutar Lagu Otomatis -->
+    <script>
+        function toggleAudio() {
+            var audio = document.getElementById("myAudio");
+            var card = document.getElementById("musicCard");
+            var btn = document.getElementById("playBtn");
+
+            if (audio.paused) {
+                audio.play();
+                card.classList.add("playing");
+                btn.innerHTML = "❚❚";
+            } else {
+                audio.pause();
+                card.classList.remove("playing");
+                btn.innerHTML = "▶";
+            }
+        }
+    </script>
 </body>
 </html>
