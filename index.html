@@ -179,30 +179,21 @@
             left: 4px;
         }
 
-        /* --- Keahlian Bersih (Tanpa Bintang / Persentase) --- */
-        .skill-item {
-            margin-bottom: 12px;
+        /* --- Keahlian Murni Teks/Tags (Tanpa Diagram) --- */
+        .skills-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
         }
-        .skill-item:last-child { margin-bottom: 0; }
-        
-        .skill-info {
+
+        .skill-tag {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            color: #0284c7;
+            padding: 6px 14px;
+            border-radius: 12px;
             font-size: 13px;
             font-weight: 600;
-            color: #334155;
-            margin-bottom: 6px;
-        }
-        
-        .skill-bar {
-            height: 8px;
-            background: #f1f5f9;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        .skill-fill {
-            height: 100%;
-            border-radius: 10px;
-            background: linear-gradient(90deg, #f472b6, #38bdf8);
         }
 
         /* --- Galeri Grid --- */
@@ -371,35 +362,25 @@
                 <div class="list-item"><strong>S1 Manajemen Informasi Komunikasi</strong></div>
             </div>
 
-            <!-- BAGIAN 2: Pengalaman Organisasi (Tanpa Bold) -->
+            <!-- BAGIAN 2: Pengalaman Organisasi -->
             <div class="section">
                 <div class="section-title">🏛️ Pengalaman Organisasi</div>
                 <div class="list-item">Sekretaris Kabinet - Badan Eksekutif Mahasiswa STMM YK</div>
             </div>
 
-            <!-- BAGIAN 3: Keahlian Utama -->
+            <!-- BAGIAN 3: Keahlian Utama (Tanpa Diagram) -->
             <div class="section">
                 <div class="section-title">🚀 Keahlian Utama</div>
-                
-                <div class="skill-item">
-                    <div class="skill-info">Analisis Data</div>
-                    <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
-                </div>
-                
-                <div class="skill-item">
-                    <div class="skill-info">Public Speaking</div>
-                    <div class="skill-bar"><div class="skill-fill" style="width: 88%;"></div></div>
-                </div>
-
-                <div class="skill-item">
-                    <div class="skill-info">Kerja Sama Tim</div>
-                    <div class="skill-bar"><div class="skill-fill" style="width: 95%;"></div></div>
+                <div class="skills-wrapper">
+                    <span class="skill-tag">📊 Analisis Data</span>
+                    <span class="skill-tag">🗣️ Public Speaking</span>
+                    <span class="skill-tag">🤝 Kerja Sama Tim</span>
                 </div>
             </div>
 
             <!-- BAGIAN 4: Galeri Foto -->
             <div class="section">
-                <div class="section-title">📸 Galeri Kegiatan</div>
+                <div class="section-title">📸 Galeri</div>
                 <div class="gallery-grid">
                     <div class="gallery-card"><img src="foto1.jpg" alt="Kegiatan 1"></div>
                     <div class="gallery-card"><img src="foto2.jpg" alt="Kegiatan 2"></div>
@@ -417,15 +398,14 @@
 
             <!-- BAGIAN 6: Tautan Media Sosial -->
             <div class="social-grid">
-                <a href="https://github.com/Nafsyamutia" target="_blank" class="social-btn">💻 GitHub</a>
-                <a href="https://www.instagram.com/nafliasmut?vrfl=cnJ6Z2hsa292dmwy" target="_blank" class="social-btn">📸 Instagram</a>
-                <a href="https://www.linkedin.com/in/nafsya-amelia-sari-mutia-a2263a3b8?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-btn">💼 LinkedIn</a>
-                <a href="https://www.tiktok.com/@nafsyaaaaaa?_r=1&_t=ZS-9BJb9AN5bJI" target="_blank" class="social-btn">🎵 TikTok</a>
+                <a href="https://www.instagram.com/nafliasmut?vrfl=cnJ6Z2hsa292dmwy" target="_blank" class="social-btn">Instagram</a>
+                <a href="https://www.linkedin.com/in/nafsya-amelia-sari-mutia-a2263a3b8?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-btn">LinkedIn</a>
+                <a href="https://www.tiktok.com/@nafsyaaaaaa?_r=1&_t=ZS-9BJb9AN5bJI" target="_blank" class="social-btn">TikTok</a>
             </div>
 
             <!-- Tombol Kontak Langsung -->
             <a href="https://wa.me/6287859913065" target="_blank" class="btn-wa">Hubungi via WhatsApp 💬</a>
-            <a href="mailto:025241461139@mail.mmtc.ac.id" class="btn-email">Kirim Email Resmi ✉️</a>
+            <a href="mailto:025241461139@mail.mmtc.ac.id" class="btn-email">Kirim Email ✉️</a>
             
             <p class="footer-text">Sekolah Tinggi Multi Media "MMTC" Yogyakarta</p>
         </div>
